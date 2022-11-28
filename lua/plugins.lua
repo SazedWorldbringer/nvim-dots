@@ -27,6 +27,8 @@ packer.startup(function(use)
   }
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, etc via Lua
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
 
   use 'windwp/nvim-autopairs' -- auto pair completion for html tags
   use 'windwp/nvim-ts-autotag' -- auto complete parenthesis
