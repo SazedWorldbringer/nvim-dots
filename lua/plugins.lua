@@ -12,6 +12,8 @@ packer.startup(function(use)
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   } -- Neosolarized theme
+  use 'tjdevries/gruvbuddy.nvim'
+
   use 'glepnir/lspsaga.nvim'
   use 'kyazdani42/nvim-web-devicons' -- File Icons
   use 'L3MON4D3/LuaSnip' -- Snippets
@@ -39,6 +41,7 @@ packer.startup(function(use)
   use 'hoob3rt/lualine.nvim' -- Statusline
   use 'akinsho/nvim-bufferline.lua'
   use 'norcalli/nvim-colorizer.lua'
+  use 'mhinz/vim-startify' -- statup screen
 
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame and browse
