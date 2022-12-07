@@ -15,7 +15,7 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 
 -- New tab
 -- Open a new tab and then choose which file you want to open in it
-keymap.set('n', 'te', ':tabedit<Return>', { silent = true })
+keymap.set('n', 'te', ':tabedit<Return>:Alpha<Return>', { silent = true })
 -- Choose which file to open first
 -- keymap.set('n', 'te', ':tabedit')
 
@@ -50,6 +50,6 @@ keymap.set('i', 'jk', '<esc>')
 -- Change the emmet leader key from <C-y> to ','
 -- vim.cmd [[let g:user_emmet_leader_key=',']]
 
--- Open vimrc
+-- Open nvim config
 keymap.set('n', '<leader>e', ':vsplit $MYVIMRC<Return>')
 keymap.set('n', '<leader>s', ':source $MYVIMRC<Return>')
