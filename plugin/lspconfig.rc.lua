@@ -13,10 +13,18 @@ local on_attach = function(client, bufnr)
   end
 end
 
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+-- Root dir
+local root_dir = function() return vim.loop.cwd() end
+
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { 'cmd.exe', '/C', 'typescript-language-server', '--stdio' }
+  cmd = { 'cmd.exe', '/C', 'typescript-language-server', '--stdio' },
+  root_dir = root_dir
 }
 
 nvim_lsp.sumneko_lua.setup {
@@ -34,4 +42,18 @@ nvim_lsp.sumneko_lua.setup {
       }
     }
   }
+}
+
+nvim_lsp.html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "cmd.exe", "/C", "vscode-html-language-server", "--stdio" },
+  root_dir = root_dir
+}
+
+nvim_lsp.cssls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "cmd.exe", "/C", "vscode-css-language-server", "--stdio" },
+  root_dir = root_dir
 }
